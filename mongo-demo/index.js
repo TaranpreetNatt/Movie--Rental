@@ -40,7 +40,8 @@ const courseSchema = new mongoose.Schema({
   isPublished: Boolean,
   price: { 
     type: Number,
-    required: function() {return this.isPublished },
+    // required: function() {return this.isPublished },
+    required: true,
     min: 10,
     max: 200,
     get: value => Math.round(value), // called when the price property is read.
@@ -76,7 +77,7 @@ async function createCourse(){
     name: 'Angular.js Course',
     category: 'Web',
     author: 'Mosh',
-    tags: 'frontend',
+    tags: ['frontend', 'test'],
     isPublished: true,
     price: 15.8
   });
