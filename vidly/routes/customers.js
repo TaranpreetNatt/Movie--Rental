@@ -7,18 +7,18 @@ router.post('/', async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let customer = new Customer({
+  const customer = new Customer({
     isGold: req.body.isGold,
     name: req.body.name,
     phone: req.body.phone
   });
 
-  customer = await customer.save()
+  const result = await customer.save()
     .catch((err) => {
       res.status(500).send('Could not save to database');
       console.log("Error", err.message);
     });
-  res.send(customer);
+  res.send(result);
 });
 
 router.get('/', async (req, res) => {

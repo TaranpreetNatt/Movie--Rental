@@ -35,14 +35,14 @@ router.post('/', async (req, res) => {
   const { error } = validate(req.body);
   if(error) return res.status(400).send(error.details[0].message);
 
-  let genre = new Genre({ name: req.body.name });
-  genre = await genre.save()
+  const genre = new Genre({ name: req.body.name });
+  const result = await genre.save()
     .catch((err) => {
       res.status(500).send('Could not save genre');
       // console.log('Error', err.message);
     });
 
-  res.send(genre);
+  res.send(result);
 });
 
 router.delete('/:id', async (req, res) => {
