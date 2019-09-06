@@ -7,17 +7,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose --coverage"
+    "test": "jest --watchAll --verbose --coverage",
+    "start": "node index.js"
+  },
+  "engine": {
+    "node": "10.16.2"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.2",
     "config": "^1.29.4",
     "express": "^4.17.1",
     "express-async-errors": "^2.1.0",
     "fawn": "^2.1.5",
+    "helmet": "^3.11.0",
     "joi": "^13.1.0",
     "joi-objectid": "^2.0.0",
     "joi-password-complexity": "^3.1.0",
