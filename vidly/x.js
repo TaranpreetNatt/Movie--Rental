@@ -8,7 +8,7 @@
 //* Return 404 if no rental found for this customer/movie
 //* Return 400 if rental already processed
 //* Return 200 if valid request
-// Set the return date
-// Calculate the rental fee
+//* Set the return date
+//* Calculate the rental fee
 // Increase the stock
 // Return the rental
