@@ -74,7 +74,7 @@ describe('/api/returns', () => {
     expect(res.status).toBe(400);
   });
 
-  it('should return 404 if no rental is found for customer/movie', async () => {
+  it('should return 404 if rental is not found for customer/movie', async () => {
     await Rental.remove({});
     const res = await exec();
     expect(res.status).toBe(404);
@@ -124,6 +124,3 @@ describe('/api/returns', () => {
   });
 
 });
-
-// increase stock: return movie -> increase stock
-// check if dateReturned is not null then increase stock
